@@ -1,0 +1,50 @@
+name: CI
+on: push
+jobs:
+  test:
+    name: Test node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [10, 12, 14]
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use node ${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install dependencies 
+      run: npm i
+    - name: Test
+      run: npm run test
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: 12
+    - name: Install dependencies 
+      run: npm i
+    - name: Lint
+      run: npm run lint
+  coverage:
+    needs: [ test ]
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: 12
+    - name: Install dependencies 
+      run: npm i
+    - name: Coverage
+      uses: paambaati/codeclimate-action@v2.5.7
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TOKEN }}
+      with:
+        coverageCommand: npm run coverage
