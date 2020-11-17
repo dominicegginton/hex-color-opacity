@@ -1,0 +1,36 @@
+{
+  "name": "hex-color-opacity",
+  "version": "0.0.0",
+  "description": "Lightweight module for adding opacity to hexadecimal colors",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominicegginton/hex-color-opacity.git"
+  },
+  "keywords": [
+    "color",
+    "opacity",
+    "hex",
+    "hexadecimal",
+    "alpha"
+  ],
+  "author": {
+    "name": "Dominic Egginton",
+    "email": "dominic.egginton@gmail.com",
+    "url": "https://dominicegginton.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dominicegginton/hex-color-opacity/issues"
+  },
+  "homepage": "https://github.com/dominicegginton/hex-color-opacity#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "standard": "^16.0.2"
+  }
+}
