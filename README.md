@@ -24,7 +24,7 @@ opacity('#ffffff', 0.5)
 
 ## Documentation
 
-### Adding Opacity To Hexadecimal Color Values
+### Adding opacity to hexadecimal color values
 
 To add opacity to a hex color simply pass the color value (this includes the **#** character) and the desired opacity as a number value between 0 and 1 to the opacity function. The resulting hex value is returned. Support for 3 value hex colors is provided. 
 
