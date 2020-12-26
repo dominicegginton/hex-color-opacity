@@ -33,3 +33,7 @@ For example:
 ``` js
 opacity('#fff', 0.5) // #ffffff80
 ```
+
+## Contributing
+
+Contributors are welcome, feel free to submit a new [pull request](https://github.com/dominicegginton/hex-color-opacity/pulls)  to help improve **hex-color-opacity**.
