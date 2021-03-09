@@ -43,7 +43,7 @@ describe('Opacity should be applied correctly to hexadecimal color value', () =>
   })
 
   test('Opacity value of 1 should return unmodified hexadecimal color value', () => {
-    expect(opacity('#FFFFFF', 1)).toBe('#FFFFFF')
+    expect(opacity('#FFFFFF', 1)).toBe('#FFFFFFFF')
   })
 
   test('Opacity values between 0 and 1 should return hexadecimal color value with opacity applied', () => {
@@ -64,6 +64,6 @@ describe('Opacity should be applied correctly to hexadecimal color value', () =>
   })
 
   test('Hex values should be converted to upper case', () => {
-    expect(opacity('#ffffff', 1)).toBe('#FFFFFF')
+    expect(opacity('#ffffff', 1)).toBe('#FFFFFFFF')
   })
 })
