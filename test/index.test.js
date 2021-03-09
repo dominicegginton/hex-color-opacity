@@ -23,43 +23,47 @@ describe('Hexadecimal Color Validation', () => {
 describe('Opacity Validation', () => {
   test('Should throw error when opacity is not of type number', () => {
     const error = Error('Opacity should be float between 0 - 1')
-    expect(() => opacity('#ffffff', '')).toThrow(error)
+    expect(() => opacity('#FFFFFF', '')).toThrow(error)
   })
 
   test('Should throw error when opacity is greater than 1', () => {
     const error = Error('Opacity should be float between 0 - 1')
-    expect(() => opacity('#ffffff', 1.1)).toThrow(error)
+    expect(() => opacity('#FFFFFF', 1.1)).toThrow(error)
   })
 
   test('Should throw error when opacity is smaller than 0', () => {
     const error = Error('Opacity should be float between 0 - 1')
-    expect(() => opacity('#ffffff', -0.1)).toThrow(error)
+    expect(() => opacity('#FFFFFF', -0.1)).toThrow(error)
   })
 })
 
 describe('Opacity should be applied correctly to hexadecimal color value', () => {
   test('Opacity value of 0 should return translucent hexadecimal color value', () => {
-    expect(opacity('#ffffff', 0)).toBe('#ffffff00')
+    expect(opacity('#FFFFFF', 0)).toBe('#FFFFFF00')
   })
 
   test('Opacity value of 1 should return unmodified hexadecimal color value', () => {
-    expect(opacity('#ffffff', 1)).toBe('#ffffff')
+    expect(opacity('#FFFFFF', 1)).toBe('#FFFFFF')
   })
 
   test('Opacity values between 0 and 1 should return hexadecimal color value with opacity applied', () => {
-    expect(opacity('#ffffff', 0.05)).toBe('#ffffff0d')
-    expect(opacity('#ffffff', 0.1)).toBe('#ffffff1a')
-    expect(opacity('#ffffff', 0.2)).toBe('#ffffff33')
-    expect(opacity('#ffffff', 0.3)).toBe('#ffffff4d')
-    expect(opacity('#ffffff', 0.4)).toBe('#ffffff66')
-    expect(opacity('#ffffff', 0.5)).toBe('#ffffff80')
-    expect(opacity('#ffffff', 0.6)).toBe('#ffffff99')
-    expect(opacity('#ffffff', 0.7)).toBe('#ffffffb3')
-    expect(opacity('#ffffff', 0.8)).toBe('#ffffffcc')
-    expect(opacity('#ffffff', 0.9)).toBe('#ffffffe6')
+    expect(opacity('#FFFFFF', 0.05)).toBe('#FFFFFF0D')
+    expect(opacity('#FFFFFF', 0.1)).toBe('#FFFFFF1A')
+    expect(opacity('#FFFFFF', 0.2)).toBe('#FFFFFF33')
+    expect(opacity('#FFFFFF', 0.3)).toBe('#FFFFFF4D')
+    expect(opacity('#FFFFFF', 0.4)).toBe('#FFFFFF66')
+    expect(opacity('#FFFFFF', 0.5)).toBe('#FFFFFF80')
+    expect(opacity('#FFFFFF', 0.6)).toBe('#FFFFFF99')
+    expect(opacity('#FFFFFF', 0.7)).toBe('#FFFFFFB3')
+    expect(opacity('#FFFFFF', 0.8)).toBe('#FFFFFFCC')
+    expect(opacity('#FFFFFF', 0.9)).toBe('#FFFFFFE6')
   })
 
   test('Opacity should be applied to three value hexadecimal color values', () => {
-    expect(opacity('#fff', 0.5)).toBe('#ffffff80')
+    expect(opacity('#FFF', 0.5)).toBe('#FFFFFF80')
+  })
+
+  test('Hex values should be converted to upper case', () => {
+    expect(opacity('#ffffff', 1)).toBe('#FFFFFF')
   })
 })
