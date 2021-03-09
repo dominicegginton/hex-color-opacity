@@ -47,6 +47,7 @@ describe('Opacity should be applied correctly to hexadecimal color value', () =>
   })
 
   test('Opacity values between 0 and 1 should return hexadecimal color value with opacity applied', () => {
+    expect(opacity('#ffffff', 0.05)).toBe('#ffffff0d')
     expect(opacity('#ffffff', 0.1)).toBe('#ffffff1a')
     expect(opacity('#ffffff', 0.2)).toBe('#ffffff33')
     expect(opacity('#ffffff', 0.3)).toBe('#ffffff4d')
