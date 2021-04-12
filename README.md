@@ -1,11 +1,4 @@
-# hex-color-opacity
-
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dominicegginton/hex-color-opacity/CI/main?label=CI)](https://github.com/dominicegginton/hex-color-opacity/actions)
-[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/dominicegginton/hex-color-opacity)](https://codeclimate.com/github/dominicegginton/hex-color-opacity)
-[![npm](https://img.shields.io/npm/dt/hex-color-opacity?label=Downloads)](https://www.npmjs.com/package/hex-color-opacity)
-[![js-standard-style](https://img.shields.io/badge/Code%20Style-standard-brightgreen.svg)](http://standardjs.com)
-
-> Lightweight module for adding opacity to hexadecimal colors
+![](./assets/cover.svg)
 
 ## Install
 
