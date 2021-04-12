@@ -67,3 +67,23 @@ describe('Opacity should be applied correctly to hexadecimal color value', () =>
     expect(opacity('#ffffff', 1)).toBe('#FFFFFFFF')
   })
 })
+
+describe('Opacity value should be updated correctly when hexadecimal color value already has an opacity applied', () => {
+  test('Opacity values between 0 and 1 should return hexadecimal color value with and opacity value', () => {
+    const color = opacity('#FFFFFF', 0.5)
+    expect(opacity(color, 0.05)).toBe('#FFFFFF0D')
+    expect(opacity(color, 0.1)).toBe('#FFFFFF1A')
+    expect(opacity(color, 0.2)).toBe('#FFFFFF33')
+    expect(opacity(color, 0.3)).toBe('#FFFFFF4D')
+    expect(opacity(color, 0.4)).toBe('#FFFFFF66')
+    expect(opacity(color, 0.5)).toBe('#FFFFFF80')
+    expect(opacity(color, 0.6)).toBe('#FFFFFF99')
+    expect(opacity(color, 0.7)).toBe('#FFFFFFB3')
+    expect(opacity(color, 0.8)).toBe('#FFFFFFCC')
+    expect(opacity(color, 0.9)).toBe('#FFFFFFE6')
+  })
+
+  test('Opacity values be updated when supplied with three value hexadecimal color', () => {
+    expect(opacity('#FFF0D', 0.5)).toBe('#FFFFFF80')
+  })
+})
