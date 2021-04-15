@@ -16,7 +16,9 @@ describe('Hexadecimal Color Validation', () => {
     expect(() => opacity('#', 0.5)).toThrow(error)
     expect(() => opacity('#00', 0.5)).toThrow(error)
     expect(() => opacity('#0000', 0.5)).toThrow(error)
+    expect(() => opacity('#00000', 0.5)).toThrow(error)
     expect(() => opacity('#0000000', 0.5)).toThrow(error)
+    expect(() => opacity('#000000000', 0.5)).toThrow(error)
   })
 })
 
@@ -59,17 +61,7 @@ describe('Opacity should be applied correctly to hexadecimal color value', () =>
     expect(opacity('#FFFFFF', 0.9)).toBe('#FFFFFFE6')
   })
 
-  test('Opacity should be applied to three value hexadecimal color values', () => {
-    expect(opacity('#FFF', 0.5)).toBe('#FFFFFF80')
-  })
-
-  test('Hex values should be converted to upper case', () => {
-    expect(opacity('#ffffff', 1)).toBe('#FFFFFFFF')
-  })
-})
-
-describe('Opacity value should be updated correctly when hexadecimal color value already has an opacity applied', () => {
-  test('Opacity values between 0 and 1 should return hexadecimal color value with and opacity value', () => {
+  test('Opacity values should be updated for hexadecimal color values with opacity already applied', () => {
     const color = opacity('#FFFFFF', 0.5)
     expect(opacity(color, 0.05)).toBe('#FFFFFF0D')
     expect(opacity(color, 0.1)).toBe('#FFFFFF1A')
@@ -83,7 +75,11 @@ describe('Opacity value should be updated correctly when hexadecimal color value
     expect(opacity(color, 0.9)).toBe('#FFFFFFE6')
   })
 
-  test('Opacity values be updated when supplied with three value hexadecimal color', () => {
-    expect(opacity('#FFF0D', 0.5)).toBe('#FFFFFF80')
+  test('Opacity should be applied to three value hexadecimal color values', () => {
+    expect(opacity('#FFF', 0.5)).toBe('#FFFFFF80')
+  })
+
+  test('Hex values should be converted to upper case', () => {
+    expect(opacity('#ffffff', 1)).toBe('#FFFFFFFF')
   })
 })
