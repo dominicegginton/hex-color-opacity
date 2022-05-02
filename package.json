@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/dominicegginton/hex-color-opacity#readme",
   "devDependencies": {
-    "jest": "^27.0.4",
+    "jest": "^28.0.3",
     "standard": "^16.0.2"
   }
 }
