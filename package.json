@@ -1,6 +1,6 @@
 {
   "name": "hex-color-opacity",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Lightweight module for adding opacity to hexadecimal colors",
   "main": "lib/index.js",
   "engines": {
